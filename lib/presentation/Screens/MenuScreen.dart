@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:greenflow/presentation/Widgets/Filters.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+
 class Menuscreen extends StatefulWidget {
   const Menuscreen({Key? key}) : super(key: key);
 
@@ -54,7 +55,6 @@ class _MenuscreenState extends State<Menuscreen> {
     });
   }
 
-
   Widget _RenderPage() {
     switch (_selectedIndex) {
       case 0:
@@ -66,62 +66,37 @@ class _MenuscreenState extends State<Menuscreen> {
         Container(
           height: 20,
           decoration: BoxDecoration(
-            color: Color(0xFF5DDDBC),
+            gradient: LinearGradient(
+              colors: [Colors.blue[900]!, Colors.blue[500]!],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
             borderRadius: BorderRadius.vertical(
               bottom: Radius.circular(40),
             ),
           ),
         ),
         
-        // Header principal con logo y título
+        // Header principal con título
         Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Icono de la app
-              Container(
-                width: 80,
-                height: 80,
-                decoration: BoxDecoration(
-                  color: Color(0xFF5DDDBC),
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0xFF5DDDBC).withOpacity(0.3),
-                      blurRadius: 10,
-                      offset: Offset(0, 5),
-                    ),
-                  ],
-                ),
-                child: Icon(
-                  Icons.eco,
-                  size: 40,
-                  color: Colors.white,
-                ),
-              ),
               SizedBox(height: 16),
               
               // Título y descripción
               Text(
-                'GreenFlow',
+                'Lorem Ipsum',
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF2C5530),
+                  color: Colors.blue[900],
                 ),
               ),
               SizedBox(height: 8),
               Text(
-                'Datos especializados en movilidad verde',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey[600],
-                ),
-                textAlign: TextAlign.center,
-              ),
-              Text(
-                'para Colombia',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.grey[600],
@@ -140,15 +115,15 @@ class _MenuscreenState extends State<Menuscreen> {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color(0xFF5DDDBC).withOpacity(0.1),
-                  Color(0xFF5DDDBC).withOpacity(0.05),
+                  Colors.blue[100]!.withOpacity(0.1),
+                  Colors.blue[100]!.withOpacity(0.05),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
               borderRadius: BorderRadius.circular(20),
               border: Border.all(
-                color: Color(0xFF5DDDBC).withOpacity(0.2),
+                color: Colors.blue[100]!.withOpacity(0.2),
                 width: 1,
               ),
             ),
@@ -159,23 +134,23 @@ class _MenuscreenState extends State<Menuscreen> {
                   children: [
                     Icon(
                       Icons.info_outline,
-                      color: Color(0xFF5DDDBC),
+                      color: Colors.blue[900],
                       size: 24,
                     ),
                     SizedBox(width: 8),
                     Text(
-                      'Sobre la Aplicación',
+                      'About Application',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFF2C5530),
+                        color: Colors.blue[900],
                       ),
                     ),
                   ],
                 ),
                 SizedBox(height: 16),
                 Text(
-                  'GreenFlow centraliza datos sobre vehículos eléctricos en Colombia, facilitando el acceso a información confiable y estructurada para usuarios interesados en la movilidad sostenible.',
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.grey[700],
@@ -193,11 +168,11 @@ class _MenuscreenState extends State<Menuscreen> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Text(
-            'Características Principales',
+            'Main Features',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF2C5530),
+              color: Colors.blue[900],
             ),
           ),
         ),
@@ -210,27 +185,27 @@ class _MenuscreenState extends State<Menuscreen> {
           child: Column(
             children: [
               _buildFeatureItem(
-                Icons.electric_car,
-                'Información de Vehículos',
-                'Datos detallados sobre vehículos eléctricos, características técnicas y especificaciones.',
+                Icons.featured_play_list,
+                'Feature One',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
               ),
               SizedBox(height: 16),
               _buildFeatureItem(
-                Icons.analytics,
-                'Análisis y Comparación',
-                'Herramientas para comparar modelos según autonomía, tipo de batería y costo de mantenimiento.',
+                Icons.featured_play_list,
+                'Feature Two',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
               ),
               SizedBox(height: 16),
               _buildFeatureItem(
-                Icons.map,
-                'Navegación Intuitiva',
-                'Interfaz fácil de usar con navegación optimizada para una mejor experiencia.',
+                Icons.featured_play_list,
+                'Feature Three',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
               ),
               SizedBox(height: 16),
               _buildFeatureItem(
-                Icons.trending_up,
-                'Datos Actualizados',
-                'Información constantemente actualizada sobre el mercado de movilidad eléctrica.',
+                Icons.featured_play_list,
+                'Feature Four',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
               ),
             ],
           ),
@@ -244,13 +219,17 @@ class _MenuscreenState extends State<Menuscreen> {
           child: Container(
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: Color(0xFF5DDDBC),
+              gradient: LinearGradient(
+                colors: [Colors.blue[900]!, Colors.blue[500]!],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Column(
               children: [
                 Text(
-                  'Impacto en Colombia',
+                  'Statistics',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -261,19 +240,19 @@ class _MenuscreenState extends State<Menuscreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    _buildStatItem('Reducción', 'Emisiones'),
+                    _buildStatItem('Stat', 'One'),
                     Container(
                       width: 1,
                       height: 40,
                       color: Colors.white.withOpacity(0.3),
                     ),
-                    _buildStatItem('Optimización', 'Energética'),
+                    _buildStatItem('Stat', 'Two'),
                     Container(
                       width: 1,
                       height: 40,
                       color: Colors.white.withOpacity(0.3),
                     ),
-                    _buildStatItem('Movilidad', 'Sostenible'),
+                    _buildStatItem('Stat', 'Three'),
                   ],
                 ),
               ],
@@ -296,7 +275,7 @@ class _MenuscreenState extends State<Menuscreen> {
               children: [
                 Icon(
                   Icons.lightbulb_outline,
-                  color: Color(0xFF5DDDBC),
+                  color: Colors.blue[900],
                   size: 24,
                 ),
                 SizedBox(width: 12),
@@ -305,15 +284,15 @@ class _MenuscreenState extends State<Menuscreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Explora los Gráficos',
+                        'Explore Graphics',
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF2C5530),
+                          color: Colors.blue[900],
                         ),
                       ),
                       Text(
-                        'Descubre análisis detallados en la sección de gráficos',
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                         style: TextStyle(
                           fontSize: 12,
                           color: Colors.grey[600],
@@ -357,7 +336,7 @@ class _MenuscreenState extends State<Menuscreen> {
                   ),
                   BottomNavigationBar(
                     backgroundColor: Colors.white,
-                    selectedItemColor: Color(0xFF5DDDBC),
+                    selectedItemColor: Colors.blue[900],
                     unselectedItemColor: Colors.grey,
                     type: BottomNavigationBarType.fixed,
                     currentIndex: _selectedGraphics,
@@ -365,19 +344,19 @@ class _MenuscreenState extends State<Menuscreen> {
                     items: const [
                       BottomNavigationBarItem(
                         icon: Icon(Icons.show_chart),
-                        label: 'Tendencias',
+                        label: 'Trends',
                       ),
                       BottomNavigationBarItem(
                         icon: Icon(Icons.stacked_bar_chart),
-                        label: 'Comparativas',
+                        label: 'Comparative',
                       ),
                       BottomNavigationBarItem(
                         icon: Icon(Icons.bar_chart),
-                        label: 'Estadísticas',
+                        label: 'Statistics',
                       ),
                       BottomNavigationBarItem(
                         icon: Icon(Icons.donut_large),
-                        label: 'Distribución',
+                        label: 'Distribution',
                       ),
                     ],
                   ),
@@ -415,12 +394,12 @@ class _MenuscreenState extends State<Menuscreen> {
         Container(
           padding: EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: Color(0xFF5DDDBC).withOpacity(0.1),
+            color: Colors.blue[100]!.withOpacity(0.1),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Icon(
             icon,
-            color: Color(0xFF5DDDBC),
+            color: Colors.blue[900],
             size: 24,
           ),
         ),
@@ -434,7 +413,7 @@ class _MenuscreenState extends State<Menuscreen> {
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF2C5530),
+                  color: Colors.blue[900],
                 ),
               ),
               SizedBox(height: 4),
@@ -479,7 +458,6 @@ Widget _buildStatItem(String title, String subtitle) {
   );
 }
 
-
   Widget _RenderGraphics() {
   switch (_selectedGraphics) {
     case 0:
@@ -507,7 +485,7 @@ Widget _buildStatItem(String title, String subtitle) {
           ..loadRequest(Uri.parse('https://app.powerbi.com/view?r=eyJrIjoiNDJhM2QyZDEtYjU3OC00Nzc2LWJmYmQtNmM2ZWZmNjk1ZDJlIiwidCI6IjRkZDEzM2ZkLWNhMmEtNDA5OC1hZTkxLTBlYWEwYzU4MjNiOCIsImMiOjR9')),
       );
     default:
-      return Center(child: Text('Selecciona una gráfica'));
+      return Center(child: Text('Select a graphic'));
   }
   }
 
@@ -516,26 +494,16 @@ Widget _buildStatItem(String title, String subtitle) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Color(0xFF5DDDBC),
+        backgroundColor: Colors.blue[900],
         elevation: 0,
         title: Text(
-          'Bienvenido',
+          'Home',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
             fontSize: 22,
           ),
         ),
-        // actions: [
-        //   IconButton(
-        //     icon: Icon(Icons.notifications_outlined, color: Colors.white),
-        //     onPressed: () {},
-        //   ),
-        //   IconButton(
-        //     icon: Icon(Icons.person_outline, color: Colors.white),
-        //     onPressed: () {},
-        //   ),
-        // ],
       ),
       body: _RenderPage(),
       bottomNavigationBar: Container(
@@ -552,7 +520,7 @@ Widget _buildStatItem(String title, String subtitle) {
           borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
           child: BottomNavigationBar(
             backgroundColor: Colors.white,
-            selectedItemColor: Color(0xFF5DDDBC),
+            selectedItemColor: Colors.blue[900],
             unselectedItemColor: Colors.grey,
             type: BottomNavigationBarType.fixed,
             currentIndex: _selectedIndex,
@@ -560,23 +528,15 @@ Widget _buildStatItem(String title, String subtitle) {
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
-                label: 'Inicio',
+                label: 'Home',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.auto_graph_outlined),
-                label: 'Gráficos',
+                label: 'Graphics',
               ),
-              // BottomNavigationBarItem(
-              //   icon: Icon(Icons.add_circle_outline),
-              //   label: 'Añadir',
-              // ),
-              // BottomNavigationBarItem(
-              //   icon: Icon(Icons.chat_bubble_outline),
-              //   label: 'Mensajes',
-              // ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.table_chart_outlined),
-                label: 'Listado',
+                label: 'List',
               ),
             ],
           ),
@@ -596,12 +556,12 @@ Widget _buildStatItem(String title, String subtitle) {
           Container(
             padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: Color(0xFF5DDDBC).withOpacity(0.2),
+              color: Colors.blue[100]!.withOpacity(0.2),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Icon(
               icon,
-              color: Color(0xFF5DDDBC),
+              color: Colors.blue[900],
               size: 32,
             ),
           ),
@@ -644,7 +604,7 @@ Widget _buildStatItem(String title, String subtitle) {
               height: 100,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Color(0xFF5DDDBC), Color(0xFF5DDDBC).withOpacity(0.7)],
+                  colors: [Colors.blue[900]!, Colors.blue[500]!.withOpacity(0.7)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
@@ -676,21 +636,21 @@ Widget _buildStatItem(String title, String subtitle) {
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                       decoration: BoxDecoration(
-                        color: Color(0xFF5DDDBC).withOpacity(0.2),
+                        color: Colors.blue[100]!.withOpacity(0.2),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Row(
                         children: [
                           Icon(
                             Icons.star,
-                            color: Color(0xFF5DDDBC),
+                            color: Colors.blue[900],
                             size: 16,
                           ),
                           SizedBox(width: 2),
                           Text(
                             rating,
                             style: TextStyle(
-                              color: Color(0xFF5DDDBC),
+                              color: Colors.blue[900],
                               fontWeight: FontWeight.bold,
                               fontSize: 12,
                             ),
@@ -740,13 +700,13 @@ Widget _buildStatItem(String title, String subtitle) {
             width: 50,
             height: 50,
             decoration: BoxDecoration(
-              color: Color(0xFF5DDDBC).withOpacity(0.2),
+              color: Colors.blue[100]!.withOpacity(0.2),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Center(
               child: Icon(
                 Icons.notifications,
-                color: Color(0xFF5DDDBC),
+                color: Colors.blue[900],
               ),
             ),
           ),

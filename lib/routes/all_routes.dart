@@ -62,7 +62,7 @@ final GoRouter routes = GoRouter(
       builder: (context, state) => Registerscreen(),
     ),
     GoRoute(
-      path: '/menu',
+      path: '/home',
       builder: (context, state) => Menuscreen(),
     ),
     // GoRoute(

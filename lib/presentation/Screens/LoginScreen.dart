@@ -183,6 +183,8 @@ class _Loginscreen extends State<Loginscreen> {
                                 "password": _passwordController.text,
                               };
                               authProvider.loginUser(user);
+                              // Navigate to home after login
+                              context.push('/home');
                             }
                           },
                           style: ElevatedButton.styleFrom(
@@ -289,7 +291,7 @@ class _Loginscreen extends State<Loginscreen> {
                   icon: Icon(Icons.arrow_forward_ios, color: Colors.white),
                   onPressed: () {
                     // Navigate to next screen
-                    context.push('/menu');
+                    context.push('/home');
                   },
                 ),
               ),
