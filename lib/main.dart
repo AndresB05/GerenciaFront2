@@ -3,6 +3,9 @@ import 'package:greenflow/providers/authentication/login_provider.dart';
 import 'package:greenflow/routes/all_routes.dart';
 import 'package:provider/provider.dart';
 void main() {
+  // Ensure Flutter binding is initialized
+  WidgetsFlutterBinding.ensureInitialized();
+  
   runApp(MultiProvider(
 providers: [
 ChangeNotifierProvider(create: (_) => AuthenticationProvider()), // Registro del provider
