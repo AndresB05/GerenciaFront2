@@ -3,19 +3,14 @@ import 'package:go_router/go_router.dart';
 import 'package:greenflow/presentation/Screens/LoginScreen.dart';
 import 'package:greenflow/presentation/Screens/MenuScreen.dart';
 import 'package:greenflow/presentation/Screens/RegisterScreen.dart';
+import 'package:greenflow/presentation/Screens/product_list_screen.dart';
 
 // Removed HomeScreen import
 // import 'package:greenflow/presentation/Screens/HomeScreen.dart';
 
-
 final GoRouter routes = GoRouter(
   routes: [
-
-
-    GoRoute(
-      path: '/',
-      builder: (context, state) => Loginscreen(),
-    ),
+    GoRoute(path: '/', builder: (context, state) => Loginscreen()),
 
     // Removed HomeScreen route
     // GoRoute(
@@ -48,23 +43,9 @@ final GoRouter routes = GoRouter(
     //     },
     //   ),
     // ),,
-
-
-
-
-
-    GoRoute(
-      path: '/login',
-      builder: (context, state) => Loginscreen(),
-    ),
-    GoRoute(
-      path: '/register',
-      builder: (context, state) => Registerscreen(),
-    ),
-    GoRoute(
-      path: '/home',
-      builder: (context, state) => Menuscreen(),
-    ),
+    GoRoute(path: '/login', builder: (context, state) => Loginscreen()),
+    GoRoute(path: '/register', builder: (context, state) => Registerscreen()),
+    GoRoute(path: '/home', builder: (context, state) => Menuscreen()),
     // GoRoute(
     //   path: '/product/:id', // Ruta dinámica con ID
     //   builder: (context, state) {
