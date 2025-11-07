@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:greenflow/presentation/Widgets/Filters.dart';
 import 'package:greenflow/presentation/Widgets/PowerBIViewer.dart';
+import 'package:greenflow/presentation/Screens/product_list_screen.dart';
 
 class Menuscreen extends StatefulWidget {
   const Menuscreen({Key? key}) : super(key: key);
@@ -301,7 +301,7 @@ class _MenuscreenState extends State<Menuscreen> {
           ),
         ); // Aquí puedes agregar el contenido de la página de explorar
       case 2:
-        return VehiclesTablePage(); // Aquí puedes agregar el contenido de la página de añadir
+        return const ProductListScreen(); // Pantalla de listado de productos
       case 3:
         return Container(); // Aquí puedes agregar el contenido de la página de mensajes
       case 4:
@@ -410,6 +410,18 @@ class _MenuscreenState extends State<Menuscreen> {
             fontSize: 22,
           ),
         ),
+        actions: [
+          // Debug: ir a la pestaña List para forzar la carga de productos
+          IconButton(
+            tooltip: 'Go to List',
+            onPressed: () {
+              setState(() {
+                _selectedIndex = 2;
+              });
+            },
+            icon: const Icon(Icons.list),
+          ),
+        ],
       ),
       body: _RenderPage(),
       bottomNavigationBar: Container(
